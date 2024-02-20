@@ -48,6 +48,8 @@ streamlit.write('The user entered ', fruit_choice)
 #don't run anything past here while we trobuleshoot
 streamlit.stop()
 
+my_cur.execute("insert into fruit_load_list  values ('from streamlit')")
+
 streamlit.header("The fruit load list contains:")
 #Snowflake-related functions
 def get_fruit_load_list():
@@ -65,5 +67,3 @@ if streamlit.button ('Get Fruit Load List'):
 
 add_my_fruit = streamlit.text_input('')
 streamlit.write('Thanks for adding ', add_my_fruit)
-
-my_cur.execute("insert into fruit_load_list  values ('from streamlit')")
